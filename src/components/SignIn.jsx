@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const SignIn = () => {
+export const SignIn = ({ setName }) => {
   const classes = useStyles();
   const [disabled, setDisabled] = useState(true);
   const [string, setString] = useState("");
@@ -74,12 +74,16 @@ export const SignIn = () => {
             onChange={(e) => setString(e.target.value)}
           />
           <Button
-            type="submit"
+            type="button"
             fullWidth
             variant="contained"
             color="primary"
             className={classes.submit}
             disabled={disabled}
+            onClick={() => {
+              setName(string);
+              setString("");
+            }}
           >
             はじめる
           </Button>
