@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const SignIn = ({ setName }) => {
+export const SignIn = ({ setUserName }) => {
   const classes = useStyles();
   const [disabled, setDisabled] = useState(true);
   const [string, setString] = useState("");
@@ -77,7 +77,7 @@ export const SignIn = ({ setName }) => {
               if (isComposed) {
                 return;
               } else if (e.key === "Enter") {
-                setName(e.target.value);
+                setUserName(e.target.value);
                 e.preventDefault();
               }
             }}
@@ -91,7 +91,7 @@ export const SignIn = ({ setName }) => {
             color="primary"
             className={classes.submit}
             disabled={disabled}
-            onClick={() => setName(string)}
+            onClick={() => setUserName(string)}
           >
             はじめる
           </Button>
