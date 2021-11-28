@@ -2,11 +2,12 @@ import React, { useState } from "react";
 
 import { SignIn } from "src/components/SignIn";
 import { Main } from "src/components/Main";
+import config from "src/config.json";
 
 export default () => {
   const [name, setName] = useState("");
 
-  if (name === "") {
+  if (config.signInEnabled && name === "") {
     return <SignIn setName={setName} />;
   } else {
     return <Main name={name} />;
