@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/Styles";
+import { makeStyles } from "@mui/styles";
 
 import { MessageList } from "src/components/MessageList";
 import { MessageInputField } from "src/components/MessageinputField";
