@@ -22,10 +22,11 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const database = getDatabase(app);
+const db = getDatabase(app);
+export const messagesRef = ref(db);
 
 export const pushMessage = ({ userName, text }) => {
-  push(ref(database), {
+  push(messagesRef, {
     userName: userName,
     message: text,
   });
