@@ -16,7 +16,7 @@ export const Main = ({ userName }) => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <MessageList />
+      <MessageList userName={userName} />
       <MessageInputField userName={userName} />
     </div>
   );
