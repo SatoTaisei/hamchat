@@ -36,7 +36,7 @@ export const MessageList = (username) => {
   const messageQuery = query(
     messagesRef,
     orderByKey("message"),
-    limitToLast(3)
+    limitToLast(10)
   );
 
   // 初回の既存メッセージ取得
