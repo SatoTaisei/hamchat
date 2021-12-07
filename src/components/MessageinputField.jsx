@@ -13,10 +13,10 @@ const useStyles = makeStyles({
   },
 });
 
-export const MessageInputField = ({ userName }) => {
+export const MessageInputField = ({ username }) => {
   const [text, setText] = useState("");
   const classes = useStyles();
-  const avatarPath = gravatarPath(userName);
+  const avatarPath = gravatarPath(username);
   return (
     <div className={classes.root}>
       <Grid container>
@@ -24,11 +24,11 @@ export const MessageInputField = ({ userName }) => {
           <Avatar src={avatarPath} />
         </Grid>
         <Grid item xs={10}>
-          <MessageField userName={userName} text={text} setText={setText} />
+          <MessageField username={username} text={text} setText={setText} />
         </Grid>
         <Grid item xs={1}>
           <MessageSubmitButton
-            userName={userName}
+            username={username}
             text={text}
             setText={setText}
           />

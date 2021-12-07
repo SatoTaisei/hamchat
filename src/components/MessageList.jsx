@@ -28,9 +28,9 @@ const useStyles = makeStyles({
   },
 });
 
-export const MessageList = (userName) => {
+export const MessageList = (username) => {
   const classes = useStyles();
-  const avatarPath = gravatarPath(userName);
+  const avatarPath = gravatarPath(username);
   const [messages, setMessages] = useState([]);
 
   const messageQuery = query(
@@ -56,15 +56,15 @@ export const MessageList = (userName) => {
 
   return (
     <List className={classes.root}>
-      {messages.map(({ key, userName, message }) => {
+      {messages.map(({ key, username, message }) => {
         return (
           <>
-            <ListItem key={key} userName={userName} message={message}>
+            <ListItem key={key} username={username} message={message}>
               <ListItemAvatar>
                 <Avatar src={avatarPath} />
               </ListItemAvatar>
               <ListItemText
-                primary={userName}
+                primary={username}
                 secondary={
                   <Typography
                     className={classes.inline}

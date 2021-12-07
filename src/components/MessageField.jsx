@@ -3,7 +3,7 @@ import { TextField } from "@mui/material";
 
 import { pushMessage } from "src/firebase.js";
 
-export const MessageField = ({ userName, text, setText }) => {
+export const MessageField = ({ username, text, setText }) => {
   const [isComposed, setIsComposed] = useState(false);
   return (
     <TextField
@@ -15,7 +15,7 @@ export const MessageField = ({ userName, text, setText }) => {
         if (isComposed || e.target.value === "") {
           return;
         } else if (e.key === "Enter") {
-          pushMessage({ userName, text });
+          pushMessage({ username, text });
           setText("");
           e.preventDefault();
         }

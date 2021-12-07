@@ -4,13 +4,13 @@ import SendIcon from "@mui/icons-material/Send";
 
 import { pushMessage } from "src/firebase.js";
 
-export const MessageSubmitButton = ({ userName, text, setText }) => {
+export const MessageSubmitButton = ({ username, text, setText }) => {
   return (
     <IconButton
       size="large"
       disabled={text === ""}
       onClick={() => {
-        pushMessage({ userName, text });
+        pushMessage({ username, text });
         setText("");
       }}
     >

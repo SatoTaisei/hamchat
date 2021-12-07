@@ -5,11 +5,11 @@ import { Main } from "src/components/Main";
 import config from "src/config.json";
 
 export default () => {
-  const [userName, setUserName] = useState("");
+  const [username, setUserName] = useState("");
 
-  if (config.signInEnabled && userName === "") {
+  if (config.signInEnabled && username === "") {
     return <SignIn setUserName={setUserName} />;
   } else {
-    return <Main userName={userName} />;
+    return <Main username={username} />;
   }
 };
